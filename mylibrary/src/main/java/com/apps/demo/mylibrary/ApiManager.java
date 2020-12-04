@@ -46,18 +46,18 @@ public class ApiManager {
 
                     DataModel dataModel = new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status);
 
-//                    SharedPreferences sharedPreferences = context.getSharedPreferences("macncloud", Context.MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.putInt("key_app_id", dataModel.getApp_id());
-//                    editor.putString("key_app_name", dataModel.getApp_name());
-//                    editor.putString("key_app_package", dataModel.getApp_package());
-//                    editor.putString("key_app_version", dataModel.getApp_version());
-//                    editor.putString("key_app_ads", dataModel.getApp_ads());
-//                    editor.putString("key_app_interstitial", dataModel.getApp_interstitial());
-//                    editor.putString("key_app_banner", dataModel.getApp_banner());
-//                    editor.putString("key_app_auth", dataModel.getApp_auth());
-//                    editor.putString("key_app_status", dataModel.getApp_status());
-//                    editor.apply();
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("macncloud", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("key_app_id", dataModel.getApp_id());
+                    editor.putString("key_app_name", dataModel.getApp_name());
+                    editor.putString("key_app_package", dataModel.getApp_package());
+                    editor.putString("key_app_version", dataModel.getApp_version());
+                    editor.putString("key_app_ads", dataModel.getApp_ads());
+                    editor.putString("key_app_interstitial", dataModel.getApp_interstitial());
+                    editor.putString("key_app_banner", dataModel.getApp_banner());
+                    editor.putString("key_app_auth", dataModel.getApp_auth());
+                    editor.putString("key_app_status", dataModel.getApp_status());
+                    editor.apply();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
