@@ -13,6 +13,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,7 @@ public class ApiManager {
     private String app_version = "1.0.0";
     private String app_auth = "FGDRG32DS2GVD31VEG1XD2V36EF3D2BV";
     public static ApiManager apiManager = new ApiManager();
+    ArrayList<DataModel> dataModels = new ArrayList<>();
 
     public void getData(final Context context) {
 
@@ -44,20 +46,23 @@ public class ApiManager {
                     String app_auth = jsonObject.getString("app_auth");
                     String app_status = jsonObject.getString("app_status");
 
-                    DataModel dataModel = new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status);
+                    //DataModel dataModel = new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status);
 
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("macncloud", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putInt("key_app_id", dataModel.getApp_id());
-                    editor.putString("key_app_name", dataModel.getApp_name());
-                    editor.putString("key_app_package", dataModel.getApp_package());
-                    editor.putString("key_app_version", dataModel.getApp_version());
-                    editor.putString("key_app_ads", dataModel.getApp_ads());
-                    editor.putString("key_app_interstitial", dataModel.getApp_interstitial());
-                    editor.putString("key_app_banner", dataModel.getApp_banner());
-                    editor.putString("key_app_auth", dataModel.getApp_auth());
-                    editor.putString("key_app_status", dataModel.getApp_status());
-                    editor.apply();
+
+                    dataModels.add(new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status));
+
+//                    SharedPreferences sharedPreferences = context.getSharedPreferences("macncloud", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();
+//                    editor.putInt("key_app_id", dataModel.getApp_id());
+//                    editor.putString("key_app_name", dataModel.getApp_name());
+//                    editor.putString("key_app_package", dataModel.getApp_package());
+//                    editor.putString("key_app_version", dataModel.getApp_version());
+//                    editor.putString("key_app_ads", dataModel.getApp_ads());
+//                    editor.putString("key_app_interstitial", dataModel.getApp_interstitial());
+//                    editor.putString("key_app_banner", dataModel.getApp_banner());
+//                    editor.putString("key_app_auth", dataModel.getApp_auth());
+//                    editor.putString("key_app_status", dataModel.getApp_status());
+//                    editor.apply();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
