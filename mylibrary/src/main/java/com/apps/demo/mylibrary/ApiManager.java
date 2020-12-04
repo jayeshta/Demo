@@ -13,7 +13,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +23,6 @@ public class ApiManager {
     private String app_version = "1.0.0";
     private String app_auth = "FGDRG32DS2GVD31VEG1XD2V36EF3D2BV";
     public static ApiManager apiManager = new ApiManager();
-    ArrayList<DataModel> dataModels = new ArrayList<>();
 
     public void getData(final Context context) {
 
@@ -46,10 +44,7 @@ public class ApiManager {
                     String app_auth = jsonObject.getString("app_auth");
                     String app_status = jsonObject.getString("app_status");
 
-                    //DataModel dataModel = new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status);
-
-
-                    dataModels.add(new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status));
+                    DataModel dataModel = new DataModel(app_id, app_name, app_package, app_version, app_ads, app_interstitial, app_banner, app_auth, app_status);
 
 //                    SharedPreferences sharedPreferences = context.getSharedPreferences("macncloud", Context.MODE_PRIVATE);
 //                    SharedPreferences.Editor editor = sharedPreferences.edit();
