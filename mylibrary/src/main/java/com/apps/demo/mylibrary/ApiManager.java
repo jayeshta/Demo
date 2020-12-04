@@ -19,10 +19,11 @@ import java.util.Map;
 public class ApiManager {
 
     public static final String Url = "https://playdevelopers.com/api/android/apps/json/auth";
-    private String app_package = "com.apps.demo.master";
+    public static String app_package = "com.apps.demo.master";
     private String app_version = "1.0.0";
     private String app_auth = "FGDRG32DS2GVD31VEG1XD2V36EF3D2BV";
     public static ApiManager apiManager = new ApiManager();
+
 
     public void getData(final Context context) {
 
